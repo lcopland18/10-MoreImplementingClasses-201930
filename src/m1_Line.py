@@ -91,6 +91,7 @@ class Point(object):
         self.x = x
         self.y = y
 
+
     def __repr__(self):
         """
         Returns a string representation of this Point.
@@ -229,6 +230,8 @@ class Line(object):
         self.start = start.clone()
         self.end = end.clone()
         self.number_of_clones = 0
+        self.orig_start = start
+        self.orig_end = end
 
     def __repr__(self):
         """
@@ -627,7 +630,7 @@ class Line(object):
           :rtype: bool
         """
         # ---------------------------------------------------------------------
-        # TODO: 12.
+        # DONE: 12.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -698,7 +701,7 @@ class Line(object):
             print(line2)  # Should print: Line[(0, 1), (10, 20)]
         """
         # ---------------------------------------------------------------------
-        # TODO: 13.
+        # DONE: 13.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -707,6 +710,9 @@ class Line(object):
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
 
+        self.start = self.orig_start
+        self.end = self.orig_end
+        return self
 
 ###############################################################################
 # The TEST functions for the  Line  class begin here.
