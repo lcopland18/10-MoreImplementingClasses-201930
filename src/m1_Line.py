@@ -228,6 +228,7 @@ class Line(object):
 
         self.start = start.clone()
         self.end = end.clone()
+        self.number_of_clones = 0
 
     def __repr__(self):
         """
@@ -337,7 +338,7 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
-
+        self.number_of_clones = self.number_of_clones + 1
         return Line(self.start,self.end)
 
     def reverse(self):
@@ -485,7 +486,7 @@ class Line(object):
           :rtype: int:
         """
         # ---------------------------------------------------------------------
-        # TODO: 8.
+        # DONE: 8.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -493,6 +494,7 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
+        return self.number_of_clones
 
     def line_plus(self, other_line):
         """
@@ -519,7 +521,7 @@ class Line(object):
           :rtype: Line:
         """
         # ---------------------------------------------------------------------
-        # TODO: 9.
+        # DONE: 9.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -527,6 +529,8 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
+        return Line(Point(self.start.x + other_line.start.x,self.start.y+other_line.start.y),Point(self.end.x + other_line.end.x,self.end.y+other_line.end.y))
+
 
     def line_minus(self, other_line):
         """
