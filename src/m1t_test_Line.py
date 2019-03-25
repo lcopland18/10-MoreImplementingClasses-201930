@@ -1,6 +1,5 @@
 """
 TESTS the   Line   class in module   m1_Line.
-
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, and their colleagues.
 """
