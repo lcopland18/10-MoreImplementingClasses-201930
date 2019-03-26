@@ -162,7 +162,7 @@ class CapitalT(object):
           :type letter_thickness:    int
         """
         # ---------------------------------------------------------------------
-        # TODO: 3.
+        # DONE: 3.
         #   READ the above specification, including the Example.
         #   Implement this method, using the instance variables
         #      h_rect
@@ -171,7 +171,7 @@ class CapitalT(object):
         #   Note: Implement   attach_to   before testing this __init__ method.
         # ---------------------------------------------------------------------
         self.h_rect = rg.Rectangle(rg.Point(intersection_center.x - (width/2),intersection_center.y - (letter_thickness/2)),rg.Point(intersection_center.x + (width/2),intersection_center.y + (letter_thickness/2)))
-        self.v_rect = rg.Rectangle(rg.Point(intersection_center.x - (letter_thickness/2),intersection_center.y - (letter_thickness/2)),rg.Point((intersection_center.x + (letter_thickness/2)),intersection_center.y + (letter_thickness/2)+ height))
+        self.v_rect = rg.Rectangle(rg.Point(intersection_center.x - (letter_thickness/2),intersection_center.y - letter_thickness/2),rg.Point((intersection_center.x + (letter_thickness/2)),intersection_center.y + (letter_thickness/2) + (height-letter_thickness)))
 
     def attach_to(self, window):
         """
@@ -192,7 +192,7 @@ class CapitalT(object):
           :type window: rg.RoseWindow
         """
         # ---------------------------------------------------------------------
-        # TODO: 4.
+        # DONE: 4.
         #   READ the above specification, including the Example.
         #   Implement this method, then TEST it by:
         #     a. Un-comment the call to its test function, in main.  Run.
@@ -200,6 +200,9 @@ class CapitalT(object):
         #     c. Compare the graphics window to the   simple_t.pdf   pictures.
         #        They should look exactly the same as each other.
         # ---------------------------------------------------------------------
+        self.v_rect.attach_to(window)
+        self.h_rect.attach_to(window)
+        window.render()
 
 
     def set_colors(self, fill_color, outline_color):
